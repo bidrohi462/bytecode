@@ -38,5 +38,11 @@ class EditAccount extends CI_Controller {
 			$this->load->view('editaccountui');
 			return;
 		}
+
+		$account_no=$this->input->post('account_no');
+		$add_deduct=$this->input->post('add_deduct');
+		$amount=$this->input->post('amount');
+
+		Account::adjustBalance($account_no, $add_deduct, $amount);
 	}
 }
