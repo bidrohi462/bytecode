@@ -52,7 +52,7 @@
             </script>
             <h1> Add New User </h1>
             <?php $errors=validation_errors(); if(isset($errors) && !empty($errors)): ?><div class="errors"><?php echo $errors; ?></div><?php endif; ?>
-            <form action="" method="post" role="form" id="register-form">
+            <form action="<?php echo site_url('openaccount/create'); ?>" method="post" role="form" id="register-form">
                 <div class="form-group">
                     <label for=""> Name </label>
                     <input type="text" class="form-control" name="name" value="<?php set_value('name'); ?>">

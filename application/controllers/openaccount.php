@@ -24,7 +24,7 @@ class OpenAccount extends CI_Controller {
 		$address=$this->input->post('address');
 		$balance=$this->input->post('balance');
 
-		Account::createAccount($name, $phone, $address, $balance);
+		$this->Account->createAccount($name, $phone, $address, $balance);
 
 		// show main menu with success message
 		$this->load->view('mainmenu', array(
