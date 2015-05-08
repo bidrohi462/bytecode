@@ -1,0 +1,26 @@
+/* 
+    Document   : style
+    Created on : May 7, 2015, 11:33:30 PM
+    Author     : babar
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+.site_container{
+    width : 80%;
+    min-height : 500px;
+    height : auto;
+    overflow : auto;
+    margin : 0 auto;
+    margin-top : 100px;
+    background-color: whitesmoke;
+    padding : 20px;
+}

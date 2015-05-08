@@ -27,22 +27,4 @@ class EditAccount extends CI_Controller {
 
 		$this->account->editInfo($account_no, $name, $phone, $address);
 	}
-
-	function adjustBalance() {
-		$this->load->library('form_validation');
-
-		$this->form_validation->set_rules('add_deduct', 'Add or Deduct', 'matches[add|ded]');
-		$this->form_validation->set_rules('amount', 'Amount', 'required');
-
-		if($this->form_validation->run()==FALSE) {
-			$this->load->view('editaccountui');
-			return;
-		}
-
-		$account_no=$this->input->post('account_no');
-		$add_deduct=$this->input->post('add_deduct');
-		$amount=$this->input->post('amount');
-
-		$this->account->adjustBalance($account_no, $add_deduct, $amount);
-	}
 }

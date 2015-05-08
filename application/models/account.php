@@ -33,5 +33,9 @@ class Account extends CI_Model {
 	function getAccountById($account_no) {
 		$this->db->where('Account_no', $account_no);
 		$query=$this->db->get('Account');
+
+		if($query->num_rows()==0) return null;
+
+		return $query->first_row();
 	}
 }
