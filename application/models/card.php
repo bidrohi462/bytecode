@@ -10,7 +10,8 @@ class Card extends CI_Model {
 			'CardLimit' => $cardlimit,
 			'VerificationCode' => $vercode,
 		);
-		$this->db->insert('Card', $data);
+		//$query=$this->db->insert('Card', $data);
+		//if(!$query) {}
 	}
 
 	function getCardById($card_id) {
