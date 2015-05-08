@@ -44,8 +44,8 @@ CREATE TABLE IF NOT EXISTS `account` (
 CREATE TABLE IF NOT EXISTS `card` (
   `CardID` int(25) NOT NULL AUTO_INCREMENT,
   `PAN` int(25) NOT NULL,
-  `Type1` varchar(15) NOT NULL,
-  `Type2` varchar(15) NOT NULL,
+  `DebitOrCredit` varchar(15) NOT NULL,
+  `VisaOrMaster` varchar(15) NOT NULL,
   `ExpDate` date NOT NULL,
   `CardLimit` int(5) NOT NULL,
   `VerificationCode` varchar(30) NOT NULL,
