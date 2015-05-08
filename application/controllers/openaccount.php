@@ -1,10 +1,10 @@
 <?php
 class OpenAccount extends CI_Controller {
-	function index() {
+	function index() { //shows account creation ui
 		$this->load->view('openaccountui');
 	}
 
-	function create() {
+	function create() { //creates account
 		$this->load->library('form_validation');
 
 		// form validation
@@ -13,7 +13,7 @@ class OpenAccount extends CI_Controller {
 		$this->form_validation->set_rules('address', 'Address', 'required');
 		$this->form_validation->set_rules('balance', 'Balance', 'required|greater_than_equal_to[500]');
 
-		if($this->form_validation->run()==FALSE) {
+		if($this->form_validation->run()==FALSE) { //if validation failed shows the ui again
 			$this->load->view('openaccountui');
 			return;
 		}
@@ -24,10 +24,10 @@ class OpenAccount extends CI_Controller {
 		$address=$this->input->post('address');
 		$balance=$this->input->post('balance');
 
-		$this->account->createAccount($name, $phone, $address, $balance);
+		$this->account->createAccount($name, $phone, $address, $balance); //creates account with data from the form
 
 		// show main menu with success message
-		$this->load->view('mainmenu', array(
+		$this->load->view('mainmenu', array( //shows that account is created
 			'msg' => 'Account successfully created.'
 		));
 	}
