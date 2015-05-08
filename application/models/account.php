@@ -35,7 +35,6 @@ class Account extends CI_Model {
 		$query=$this->db->get('Account');
 
 		if($query->num_rows()==0) return null;
-
 		return $query->first_row();
 	}
 
