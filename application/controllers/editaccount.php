@@ -4,7 +4,7 @@ class EditAccount extends CI_Controller {
 		$account=$this->account->getAccountById($account_no);
 		$this->load->view('templates/header');
 		$this->load->view('editaccountui', array(
-			'account' => $account,
+			'account' => $account
 		));
 		$this->load->view('templates/footer');
 	}
