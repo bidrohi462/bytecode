@@ -2,9 +2,11 @@
 class EditAccount extends CI_Controller {
 	function index($account_no) {
 		$account=$this->account->getAccountById($account_no);
+		$this->load->view('templates/header');
 		$this->load->view('editaccountui', array(
-			'account' => $account
+			'account' => $account,
 		));
+		$this->load->view('templates/footer');
 	}
 
 	function editInfo() {
@@ -26,5 +28,21 @@ class EditAccount extends CI_Controller {
 		$address=$this->input->post('address');
 
 		$this->account->editInfo($account_no, $name, $phone, $address);
+
+		$account=$this->account->getAccountById($account_no);
+		$this->load->view('templates/header');
+		$this->load->view('accountdetailsui', array(
+			'account' => $account
+		));
+		$this->load->view('templates/footer');
+	}
+
+	function delete($account_no) {
+		$accounts=$this->account->getAccounts($page, 5);
+		$this->load->view('templates/header');
+		$this->load->view('accountlist', array(
+			'accounts' => $accounts
+		));
+		$this->load->view('templates/header');
 	}
 }

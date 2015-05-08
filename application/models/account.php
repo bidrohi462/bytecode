@@ -21,7 +21,7 @@ class Account extends CI_Model {
 	}
 
 	function adjustBalance($account_no, $add_deduct, $amount) {
-		$account=getAccountById($account_no);
+		$account=$this->account->getAccountById($account_no);
 		
 		if($add_deduct=='ded') $amount=-$amount;
 		$amount=$account->Balance+$amount;
@@ -37,5 +37,12 @@ class Account extends CI_Model {
 		if($query->num_rows()==0) return null;
 
 		return $query->first_row();
+	}
+
+	function getAccounts($page) {
+	}
+
+	function hasCard($account_no) {
+		return false;
 	}
 }
