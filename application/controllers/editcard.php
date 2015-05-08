@@ -1,30 +1,33 @@
 <?php
-class EditAccount extends CI_Controller {
-	function index($account_no) {
-		$account=$this->account->getAccountById($account_no);
-		$this->load->view('editaccountui', array(
-			'account' => $account
+class EditCard extends CI_Controller {
+	function index($cardid) {
+		$card=$this->card->getCardById($cardid);
+		$this->load->view('editcardui', array(
+			'card' => $card
 		));
 	}
 
 	function editInfo() {
-		$this->load->library('form_validation');
+	//	$this->load->library('form_validation');
 
 		// form validation
-		$this->form_validation->set_rules('name', 'Name', 'required');
-		$this->form_validation->set_rules('phone', 'Phone no', 'required');
-		$this->form_validation->set_rules('address', 'Address', 'required');
+	//	$this->form_validation->set_rules('name', 'Name', 'required');
+	//	$this->form_validation->set_rules('phone', 'Phone no', 'required');
+	//	$this->form_validation->set_rules('address', 'Address', 'required');
 
-		if($this->form_validation->run()==FALSE) {
-			$this->load->view('editaccountui');
-			return;
-		}
+	//	if($this->form_validation->run()==FALSE) {
+	//		$this->load->view('editaccountui');
+	//		return;
+	//	}
 
-		$account_no=$this->input->post('account_no');
-		$name=$this->input->post('name');
-		$phone=$this->input->post('phone');
-		$address=$this->input->post('address');
+		$cardid=$this->input->post('cardid');
+		$pan=$this->input->post('pan');
+		$debitorcredit=$this->input->post('debitorcredit');
+		$masterorvisa=$this->input->post('masterorvisa');
+		$expdate=$this->input->post('expdate');
+		$cardlimit=$this->input->post('cardlimit');
+		$vercode=$this->input->post('vercode');
 
-		$this->account->editInfo($account_no, $name, $phone, $address);
+		$this->account->editInfo($cardid, $pan, $debitorcredit, $masterorvisa, $expdate, $cardlimit, $vercode);
 	}
 }
