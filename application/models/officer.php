@@ -6,7 +6,6 @@ class Officer extends CI_Model {
 	}
 
 	function login($username, $password) {
-		echo $username;
 		$this->db->where('Officer_Id', $username);
 		$query=$this->db->get('officer');
 

@@ -1,8 +1,6 @@
 <?php
 class AccountDetails extends CI_Controller {
 	function index($account_no) {
-		if(!$this->officer->isUserLoggedIn()) redirect('login');
-		
 		$account=$this->account->getAccountById($account_no);
 		$this->load->view('templates/header');
 		$this->load->view('accountdetailsui', array(
