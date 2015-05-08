@@ -1,9 +1,9 @@
 <?php
 class AddCard extends CI_Controller {
-	function index($account_no) {
-		$account=$this->account->getAccountById($account_no);
+	function index($cardid) {
+		$card=$this->card->getCardById($cardid);
 		$this->load->view('addcardui', array(
-			'account' => $account
+			'card' => $card
 		));
 	}
 
