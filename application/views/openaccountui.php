@@ -55,19 +55,19 @@
             <form action="<?php echo site_url('openaccount/create'); ?>" method="post" role="form" id="register-form">
                 <div class="form-group">
                     <label for=""> Name </label>
-                    <input type="text" class="form-control" name="name" value="<?php set_value('name'); ?>">
+                    <input type="text" class="form-control" name="name" value="<?php echo set_value('name'); ?>">
                 </div>
                 <div class="form-group">
                     <label for=""> Phone </label>
-                    <input type="text" class="form-control" name="phone" value="<?php set_value('phone'); ?>">
+                    <input type="text" class="form-control" name="phone" value="<?php echo set_value('phone'); ?>">
                 </div>
                 <div class="form-group">
                     <label for=""> Address </label>
-                    <input type="text" class="form-control" name="address" value="<?php set_value('address'); ?>">
+                    <input type="text" class="form-control" name="address" value="<?php echo set_value('address'); ?>">
                 </div>
                 <div class="form-group">
                     <label for=""> Account Balance </label>
-                    <input type="text" class="form-control" name="balance" value="<?php set_value('balance'); ?>">
+                    <input type="text" class="form-control" name="balance" value="<?php echo set_value('balance'); ?>">
                 </div>
                 <input type="submit" class="btn btn-info" name="add_user" value="Add an user">
             </form>

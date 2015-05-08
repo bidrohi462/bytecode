@@ -1,7 +1,7 @@
 <?php
 class EditAccount extends CI_Controller {
 	function index($account_no) {
-		$account=$this->Account->getAccountById($account_no);
+		$account=$this->account->getAccountById($account_no);
 		$this->load->view('editaccountui', array(
 			'account' => $account
 		));
@@ -25,7 +25,7 @@ class EditAccount extends CI_Controller {
 		$phone=$this->input->post('phone');
 		$address=$this->input->post('address');
 
-		$this->Account->editInfo($account_no, $name, $phone, $address);
+		$this->account->editInfo($account_no, $name, $phone, $address);
 	}
 
 	function adjustBalance() {
@@ -43,6 +43,6 @@ class EditAccount extends CI_Controller {
 		$add_deduct=$this->input->post('add_deduct');
 		$amount=$this->input->post('amount');
 
-		$this->Account->adjustBalance($account_no, $add_deduct, $amount);
+		$this->account->adjustBalance($account_no, $add_deduct, $amount);
 	}
 }
